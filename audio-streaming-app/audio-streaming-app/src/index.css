@@ -1,0 +1,184 @@
+/* App.css (Mobile-Friendly & Enhanced - KL University Themed) */
+
+/* Root Variables for Consistent Styling (KL University Colors) */
+:root {
+  --kl-primary-blue: #0047AB; /* KL University Blue */
+  --kl-primary-blue-dark: #003380;
+  --kl-secondary-gold: #FFD700; /* KL University Gold */
+  --kl-secondary-gold-dark: #FFC107;
+  --kl-accent-color: #D32F2F; /* Accent Red */
+  --kl-accent-color-dark: #B32828;
+  --kl-light-bg: #F0F0F0; /* Light Gray */
+  --kl-white-bg: #fff;
+  --kl-text-color: #333;
+  --kl-light-text: #666;
+  --kl-border-color: #ddd;
+  --kl-light-border: #eee;
+  --kl-border-radius: 10px;
+  --kl-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --kl-font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --kl-padding-small: 12px;
+  --kl-padding-medium: 20px;
+  --kl-button-padding: 12px 20px;
+  --kl-font-size-regular: 16px;
+  --kl-font-size-large: 24px;
+  --kl-font-size-small: 14px;
+  --kl-transition-duration: 0.3s;
+}
+
+body {
+  font-family: var(--kl-font-family);
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.6;
+  color: var(--kl-text-color);
+  background-color: var(--kl-light-bg);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: var(--kl-padding-medium);
+  box-sizing: border-box;
+}
+
+.app-title {
+  color: var(--kl-primary-blue);
+  margin-bottom: var(--kl-padding-medium);
+  text-align: center;
+  font-size: var(--kl-font-size-large);
+  font-weight: 500;
+}
+
+.auth-container,
+.dashboard-container {
+  background-color: var(--kl-white-bg);
+  padding: 30px;
+  border-radius: var(--kl-border-radius);
+  box-shadow: var(--kl-box-shadow);
+  width: 90%;
+  max-width: 450px;
+  box-sizing: border-box;
+  margin-bottom: var(--kl-padding-medium);
+}
+
+.auth-input,
+.message-input,
+.hostel-select,
+.audio-input {
+  width: 100%;
+  padding: var(--kl-padding-small);
+  margin-bottom: 20px;
+  border: 1px solid var(--kl-border-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: var(--kl-font-size-regular);
+  transition: border-color var(--kl-transition-duration) ease;
+}
+
+.auth-input:focus,
+.message-input:focus,
+.hostel-select:focus,
+.audio-input:focus {
+  border-color: var(--kl-primary-blue);
+  outline: none;
+}
+
+.auth-button,
+.send-button,
+.logout-button {
+  background-color: var(--kl-primary-blue);
+  color: var(--kl-white-bg);
+  padding: var(--kl-button-padding);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: var(--kl-font-size-regular);
+  transition: background-color var(--kl-transition-duration) ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.auth-button:hover,
+.send-button:hover,
+.logout-button:hover {
+  background-color: var(--kl-primary-blue-dark);
+}
+
+.message-item {
+  padding: var(--kl-padding-small);
+  border-bottom: 1px solid var(--kl-light-border);
+  line-height: 1.4;
+}
+
+.logout-button {
+  background-color: var(--kl-accent-color);
+}
+
+.logout-button:hover {
+  background-color: var(--kl-accent-color-dark);
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 2em;
+  }
+
+  .auth-container,
+  .dashboard-container {
+    padding: 20px;
+  }
+
+  .auth-input,
+  .message-input,
+  .hostel-select,
+  .audio-input {
+    padding: 14px;
+  }
+
+  .auth-button,
+  .send-button,
+  .logout-button {
+    padding: 14px 22px;
+  }
+}
+
+.password-input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.password-input-container input {
+  width: 80%;
+  border-radius: 5px 0 0 5px;
+}
+
+.password-input-container button {
+  width: 20%;
+  background-color: var(--kl-light-border);
+  color: var(--kl-text-color);
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color var(--kl-transition-duration) ease;
+}
+
+.password-input-container button:hover {
+  background-color: #ddd;
+}
+
+.auth-link {
+  margin-top: 20px;
+  font-size: var(--kl-font-size-small);
+  color: var(--kl-primary-blue);
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
