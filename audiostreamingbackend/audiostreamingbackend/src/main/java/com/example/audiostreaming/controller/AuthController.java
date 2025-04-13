@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.Map;
 
 @RestController
@@ -23,9 +24,17 @@ public class AuthController {
     @PostMapping("/signup/student")
     public ResponseEntity<?> signupStudent(@RequestBody Student student) {
         try {
+            String studentIdStr = String.valueOf(student.getStudentId());
+
+            // Validate that student ID has exactly 10 digits
+            if (!studentIdStr.matches("\\d{10}")) {
+                return ResponseEntity.badRequest().body("Invalid Student ID. It must consist of exactly 10 digits.");
+            }
+
             if (studentRepository.existsById(student.getStudentId())) {
                 return ResponseEntity.badRequest().body("Student ID already taken!");
             }
+
             studentRepository.save(student);
             return ResponseEntity.status(HttpStatus.CREATED).body("Student registered successfully");
         } catch (Exception e) {
