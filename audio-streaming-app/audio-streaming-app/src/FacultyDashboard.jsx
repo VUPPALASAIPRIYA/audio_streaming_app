@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from "axios";
 
-function FacultyDashboard({ userId, onLogout }) {
+function Facultydashboard({ userId, onLogout }) {
     const [recording, setRecording] = useState(false);
     const [audioURL, setAudioURL] = useState(null);
     const [mediaRecorder, setMediaRecorder] = useState(null);
@@ -140,4 +140,4 @@ function FacultyDashboard({ userId, onLogout }) {
     );
 }
 
-export default FacultyDashboard;
+export default Facultydashboard;
