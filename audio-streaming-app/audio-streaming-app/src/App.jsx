@@ -5,7 +5,7 @@ import LoginForm from "./LoginForm";
 import StudentSignupForm from "./SignupForm.jsx"; // Ensure .jsx extension
 import FacultySignupForm from "./FacultySignupForm.jsx"; // Ensure .jsx extension
 import FacultyDashboard from "./Facultydashboard.jsx";
-import StudentDashboard from "./StudentDashboard";
+import StudentDashboard from "./StudentDashboard.jsx";
 import "./App.css";
 
 function App() {
