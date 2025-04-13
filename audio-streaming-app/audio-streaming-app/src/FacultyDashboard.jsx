@@ -72,7 +72,7 @@ function FacultyDashboard({ userId, onLogout }) {
             formData.append('hostel', hostel);
             formData.append('facultyId', userId);
 
-            await axios.post('http://localhost:8081/api/audio/upload', formData);
+            await axios.post('http://13.53.212.171:8081/api/audio/upload', formData);
 
             const now = new Date();
             const formattedDate = now.toLocaleString();

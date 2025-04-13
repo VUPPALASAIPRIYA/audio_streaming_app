@@ -15,7 +15,7 @@ function FacultySignupForm({ onLogin }) {
         setError('');
 
         try {
-            const response = await axios.post('http://localhost:8081/api/auth/signup/faculty', {
+            const response = await axios.post('http://13.53.212.171:8081/api/auth/signup/faculty', {
                 facultyId: facultyId,
                 name: name,
                 password: password,

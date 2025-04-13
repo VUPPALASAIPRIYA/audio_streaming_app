@@ -12,7 +12,7 @@ function StudentDashboard({ userId, onLogout }) {
                 const hostel = await getStudentHostelName();
                 if (hostel) {
                     setHostelName(hostel);
-                    const response = await axios.get(`http://localhost:8081/api/audio/getForHostel/${hostel}`);
+                    const response = await axios.get(`http://13.53.212.171:8081/api/audio/getForHostel/${hostel}`);
 
                     const audiosWithUrls = response.data.map(audio => {
                         if (audio.data && audio.data.length > 0) {
@@ -58,7 +58,7 @@ function StudentDashboard({ userId, onLogout }) {
 
     const getStudentHostelName = async () => {
         try {
-            const response = await axios.get(`http://localhost:8081/api/audio/getStudent/${userId}`);
+            const response = await axios.get(`http://13.53.212.171:8081/api/audio/getStudent/${userId}`);
             return response.data;
         } catch (error) {
             setError("Failed to get hostel name.");

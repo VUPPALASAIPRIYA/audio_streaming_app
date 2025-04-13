@@ -13,7 +13,7 @@ function LoginForm({ onLogin }) {
         setLoginError('');
 
         try {
-            const response = await axios.post('http://localhost:8081/api/auth/login', {
+            const response = await axios.post('http://13.53.212.171:8081/api/auth/login', {
                 studentId: loginId, // No Number() conversion
                 password: password,
             });
